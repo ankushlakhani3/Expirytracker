@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>EXPIRY TRACKER</title>
+
+  <!-- Font Icon -->
+  <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Main css -->
+  <link rel="stylesheet" href="css/style.css">
+
+
+    <!-- Font Icon -->
+  <!--  <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+  <!--  <link rel="stylesheet" href="css/style.css">-->
+  <style type="text/css">
+  /* @extend display-flex; */
+  display-flex, .display-flex, .display-flex-center {
+  display: flex;
+  display: -webkit-flex; }
+  
+  /* @extend list-type-ulli; */
+  list-type-ulli {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  
+  /* Montserrat-300 - latin */
+  @font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/montserrat/Montserrat-Light.ttf");
+  /* IE9 Compat Modes */ }
+  @font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/montserrat/Montserrat-Regular.ttf");
+  /* IE9 Compat Modes */ }
+  @font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 400;
+  src: url("../fonts/montserrat/Montserrat-Italic.ttf");
+  /* IE9 Compat Modes */ }
+  @font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/montserrat/Montserrat-Medium.ttf");
+  /* IE9 Compat Modes */ }
+  @font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/montserrat/Montserrat-SemiBold.ttf");
+  /* IE9 Compat Modes */ }
+  @font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/montserrat/Montserrat-Bold.ttf");
+  /* IE9 Compat Modes */ }
+  @font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 700;
+  src: url("../fonts/montserrat/Montserrat-BoldItalic.ttf");
+  /* IE9 Compat Modes */ }
+  @font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 900;
+  src: url("../fonts/montserrat/montserrat-v12-latin-900.ttf"), url("../fonts/montserrat/montserrat-v12-latin-900.eot") format("embedded-opentype"), url("../fonts/montserrat/montserrat-v12-latin-900.svg") format("woff2"), url("../fonts/montserrat/montserrat-v12-latin-900.woff") format("woff"), url("../fonts/montserrat/montserrat-v12-latin-900.woff2") format("truetype"); }
+  a:focus, a:active {
+  text-decoration: none;
+  outline: none;
+  transition: all 300ms ease 0s;
+  -moz-transition: all 300ms ease 0s;
+  -webkit-transition: all 300ms ease 0s;
+  -o-transition: all 300ms ease 0s;
+  -ms-transition: all 300ms ease 0s; }
+  
+  input, select, textarea {
+  outline: none;
+  appearance: unset !important;
+  -moz-appearance: unset !important;
+  -webkit-appearance: unset !important;
+  -o-appearance: unset !important;
+  -ms-appearance: unset !important; }
+  
+  input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  appearance: none !important;
+  -moz-appearance: none !important;
+  -webkit-appearance: none !important;
+  -o-appearance: none !important;
+  -ms-appearance: none !important;
+  margin: 0; }
+  
+  input:focus, select:focus, textarea:focus {
+  outline: none;
+  box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -o-box-shadow: none !important;
+  -ms-box-shadow: none !important; }
+  
+  input[type=checkbox] {
+  appearance: checkbox !important;
+  -moz-appearance: checkbox !important;
+  -webkit-appearance: checkbox !important;
+  -o-appearance: checkbox !important;
+  -ms-appearance: checkbox !important; }
+  
+  input[type=radio] {
+  appearance: radio !important;
+  -moz-appearance: radio !important;
+  -webkit-appearance: radio !important;
+  -o-appearance: radio !important;
+  -ms-appearance: radio !important; }
+  
+  img {
+  max-width: 100%;
+  height: auto; }
+  
+  figure {
+  margin: 0; }
+  
+  p {
+  margin-bottom: 0px;
+  font-size: 15px;
+  color: #777; }
+  
+  h2 {
+  line-height: 1.66;
+  margin: 0;
+  padding: 0;
+  font-weight: 900;
+  color: #222;
+  font-family: 'Montserrat';
+  font-size: 24px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 15px; }
+  
+  .clear {
+  clear: both; }
+  
+  
+  
+  .navbar {
+  margin:0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  }
+.navbar2 {
+  margin:0;
+  overflow: hidden;
+  background-color:#333333;
+  position: relative;
+  margin-bottom: 0;
+  width: 100%;
+  height: auto;
+  }
+  .navbar2 h2 {
+
+  display: block
+  margin-bottom: 0;
+  pending-bottom:0;
+   color: #f2f2f2;
+   text-align: left;
+   padding-left: 14 ;
+   text-decoration: none;
+  font-size: 22px;
+   font-weight: bold;
+   }
+   .navbar2 a {
+
+   display: block;
+   color: #f2f2f2;
+   text-align: left;
+   margin-top:0;
+   pending-top:0;
+   padding-left: 14px  ;
+   text-decoration: none;
+   font-size: 17px;
+}
+  .navbar p {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+  }
+  
+  .navbar a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  }
+  
+  .navbar a:hover {
+  background: #ddd;
+  color: black;
+  }
+  
+  
+  body {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #222;
+  font-weight: 400;
+  font-family: 'Montserrat';
+    background-image: -moz-linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+    background-image: -ms-linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+    background-image: -o-linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+    background-image: -webkit-linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+    background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+    background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size: cover;
+  background-position: center center;
+  padding:  0;
+  margin:0;}
+  
+  .flex-container {
+  display: flex;
+  flex-wrap:  wrap;
+  
+  }
+  
+  .flex-container > div {
+  
+  
+  white-space: nowrap;
+  width: auto;
+  margin: 10px;
+  padding-left: 7px;
+  text-align: left;
+  padding-bottom:30px;
+  font-size: 30px;
+  border-radius: 20px;
+  background: #fff;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -o-border-radius: 20px;
+  -ms-border-radius: 20px;
+  }
+  .container
+  {
+  width: 660px;
+  position: static;
+  margin: 0 auto;
+  }
+  .container2
+  {
+  width: 98%;
+  position: static;
+  margin: 0 auto;
+  }
+  .signup-content2
+  {
+  background: #fff;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -o-border-radius: 20px;
+  -ms-border-radius: 20px;
+  padding: 10px 31px; }
+  .display-flex {
+  justify-content: space-between;
+  -moz-justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -o-justify-content: space-between;
+  -ms-justify-content: space-between;
+  align-items: center;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -o-align-items: center;
+  -ms-align-items: center; }
+  
+  .display-flex-center {
+  justify-content: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  align-items: center;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -o-align-items: center;
+  -ms-align-items: center; }
+  
+  .position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%); }
+  
+  .signup-content {
+  background: #fff;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -o-border-radius: 20px;
+  -ms-border-radius: 20px;
+  padding: 36px 63px; }
+  
+  .form-group {
+  overflow: hidden;
+  margin-bottom: 20px; }
+  
+  .form-input {
+  width: 100%;
+  border: 1px solid #ebebeb;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  padding: 17px 20px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 500;
+  color: #222; }
+  .form-input::-webkit-input-placeholder {
+  color: #999; }
+  .form-input::-moz-placeholder {
+  color: #999; }
+  .form-input:-ms-input-placeholder {
+  color: #999; }
+  .form-input:-moz-placeholder {
+  color: #999; }
+  .form-input::-webkit-input-placeholder {
+  font-weight: 500; }
+  .form-input::-moz-placeholder {
+  font-weight: 500; }
+  .form-input:-ms-input-placeholder {
+  font-weight: 500; }
+  .form-input:-moz-placeholder {
+  font-weight: 500; }
+  .form-input:focus {
+  border: 1px solid transparent;
+  -webkit-border-image-source: -webkit-linear-gradient(to right, #9face6, #74ebd5);
+  -moz-border-image-source: -moz-linear-gradient(to right, #9face6, #74ebd5);
+  -o-border-image-source: -o-linear-gradient(to right, #9face6, #74ebd5);
+  border-image-source: linear-gradient(to right, #9face6, #74ebd5);
+  -webkit-border-image-slice: 1;
+  border-image-slice: 1;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  background-origin: border-box;
+  background-clip: content-box, border-box; }
+  .form-input:focus::-webkit-input-placeholder {
+  color: #222; }
+  .form-input:focus::-moz-placeholder {
+  color: #222; }
+  .form-input:focus:-ms-input-placeholder {
+  color: #222; }
+  .form-input:focus:-moz-placeholder {
+  color: #222; }
+  
+  .form-submit {
+  width: 100%;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  padding: 17px 20px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  border: none;
+  background-image: -moz-linear-gradient(to left, #74ebd5, #9face6);
+  background-image: -ms-linear-gradient(to left, #74ebd5, #9face6);
+  background-image: -o-linear-gradient(to left, #74ebd5, #9face6);
+  background-image: -webkit-linear-gradient(to left, #74ebd5, #9face6);
+  background-image: linear-gradient(to left, #746699, #856738); }
+  
+  input[type=checkbox]:not(old) {
+  width: 2em;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  display: none; }
+  
+  input[type=checkbox]:not(old) + label {
+  display: inline-block;
+  margin-top: 7px; 
+  margin-bottom: 25px; }
+  
+  input[type=checkbox]:not(old) + label > span {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin-right: 15px;
+  margin-bottom: 3px;
+  border: 1px solid #ebebeb;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  background: white;
+  background-image: -moz-linear-gradient(white, white);
+  background-image: -ms-linear-gradient(white, white);
+  background-image: -o-linear-gradient(white, white);
+  background-image: -webkit-linear-gradient(white, white);
+  background-image: linear-gradient(white, white);
+  vertical-align: bottom; }
+  
+  input[type=checkbox]:not(old):checked + label > span {
+  background-image: -moz-linear-gradient(white, white);
+  background-image: -ms-linear-gradient(white, white);
+  background-image: -o-linear-gradient(white, white);
+  background-image: -webkit-linear-gradient(white, white);
+  background-image: linear-gradient(white, white); }
+  
+  input[type=checkbox]:not(old):checked + label > span:before {
+  content: '\f26b';
+  display: block;
+  color: #222;
+  font-size: 11px;
+  line-height: 1.2;
+  text-align: center;
+  font-family: 'Material-Design-Iconic-Font';
+  font-weight: bold; }
+  
+  .label-agree-term {
+  font-size: 12px;
+  font-weight: 600;
+  color: #555; }
+  
+  .term-service {
+  color: #555; }
+  
+  .loginhere {
+  color: #555;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 5px; }
+  
+  .loginhere-link {
+  font-weight: 700;
+  color: #222; }
+  
+  .field-icon {
+  float: right;
+  margin-right: 17px;
+  margin-top: -32px;
+  position: relative;
+  z-index: 2;
+  color: #555; }
+  
+  @media screen and (max-width: 768px) {
+  .container {
+  width: calc(100% - 40px);
+  max-width: 100%; } }
+  @media screen and (max-width: 480px) {
+  .signup-content {
+  padding: 50px 25px; } }
+  
+
+  .fa {
+float: left;
+padding: 20px;
+font-size: 30px;
+width: 10.40%;
+text-decoration: none;
+margin: 5px 2px;
+border-radius: 50%;
+  }
+  
+  .fa:hover {
+  opacity: 0.7;
+  }
+  
+  .fa-facebook {
+  
+  color: white;
+  }
+  
+  .fa-twitter {
+  
+  color: white;
+  }
+  
+  .fa-google {
+  
+  color: white;
+  }
+  
+  .fa-linkedin {
+  
+  color: white;
+  }
+  
+  
+  .fa-instagram {
+  
+  color: white;
+  }
+  
+  .fa-snapchat-ghost {
+  
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+  
+  .fa-skype {
+  
+  color: white;
+  }
+</style>  
+</head>
+<body>
+
+<div class="navbar">
+<p > Expiry Tracker</p>
+<a href="index.html">Logout</a>
+<a href="view.html">View Reminder </a>
+<a href="category.html">Category</a>
+<a href="adddocuments.html">Add Documents</a>
+<a href="addproducts.html">Add Products</a>
+</div>
+
+
+    <div class="main">    
+       <section class="signup">
+         <div class=" container2" style="margin-top:115px; margin-bottom: 25px">
+              <div class="signup-content2">
+              <h2 class="form-title"> REMINDERS</h2>  
+              <hr>
+              </div>
+         </div>
+       </section>
+    </div>
+   
+    <div class="flex-container">
+    <div><h6 style=" text-align:center; margin-top:10px; margin-bottom:0; padding:p;">REMINDER 1</h6>
+    <hr><p><b> Name of product</b></p>
+    <p><b> category of product:</b></p>
+    <p ><b> Quantity of product:</b></p>
+    <p><b> price of product:</b></p>
+    <p><b> purchase Date:</b></p>
+    <p><b> Expiry Date:</b></p>
+    <p><b>reminder:</b></p>
+    <p><b>description about product:</b></p>
+    </div>
+    <div><h6 style=" text-align:center; margin-top:10px; margin-bottom:0; padding:p;">REMINDER 2</h6>
+    <hr><p><b> Name of product</b></p>
+    <p><b> category of product:</b></p>
+    <p><b> Quantity of product:</b></p>
+    <p><b> price of product:</b></p>
+    <p><b> purchase Date:</b></p>
+    <p><b> Expiry Date:</b></p>
+    <p><b>reminder:</b></p>
+    <p><b>description about product:</b></p>
+    </div>
+    <div><h6 style=" text-align:center; margin-top:10px; margin-bottom:0; padding:p;">REMINDER 3</h6>
+    <hr> <p><b> Name of product</b></p>
+    <p><b> category of product:</b></p>
+    <p><b> Quantity of product:</b></p>
+    <p><b> price of product:</b></p>
+    <p><b> purchase Date:</b></p>
+    <p><b> Expiry Date:</b></p>
+    <p><b>reminder:</b></p>
+    <p><b>description about product:</b></p>
+    </div>  
+    <div><h6 style=" text-align:center; margin-top:10px; margin-bottom:0; padding:p;">REMINDER 4</h6>
+    <hr><p><b> Name of product</b></p>
+    <p><b> category of product:</b></p>
+    <p><b> Quantity of product:</b></p>
+    <p><b> price of product:</b></p>
+    <p><b> purchase Date:</b></p>
+    <p><b> Expiry Date:</b></p>
+    <p><b>reminder:</b></p>
+    <p><b>description about product:</b></p>
+    </div>
+    <div><h6 style=" text-align:center; margin-top:10px; margin-bottom:0; padding:p;">REMINDER 5</h6>
+    <hr><p><b> Name of product</b></p>
+    <p><b> category of product:</b></p>
+    <p ><b> Quantity of product:</b></p>
+    <p><b> price of product:</b></p>
+    <p><b> purchase Date:</b></p>
+    <p><b> Expiry Date:</b></p>
+    <p><b>reminder:</b></p>
+    <p><b>description about product:</b></p>
+    </div>
+    <div><h6 style=" text-align:center; margin-top:10px; margin-bottom:0; padding:p;">REMINDER 6</h6>
+    <hr><p><b> Name of product</b></p>
+    <p><b> category of product:</b></p>
+    <p><b> Quantity of product:</b></p>
+    <p><b> price of product:</b></p>
+    <p><b> purchase Date:</b></p>
+    <p><b> Expiry Date:</b></p>
+    <p><b>reminder:</b></p>
+    <p><b>description about product:</b></p>
+    </div>
+    <div><h6 style=" text-align:center; margin-top:10px; margin-bottom:0; padding:p;">REMINDER 7</h6>
+    <hr> <p><b> Name of product</b></p>
+    <p><b> category of product:</b></p>
+    <p><b> Quantity of product:</b></p>
+    <p><b> price of product:</b></p>
+    <p><b> purchase Date:</b></p>
+    <p><b> Expiry Date:</b></p>
+    <p><b>reminder:</b></p>
+    <p><b>description about product:</b></p>
+    </div>  
+    <div><h6 style=" text-align:center; margin-top:10px; margin-bottom:0; padding:p;">REMINDER 8</h6>
+    <hr><p><b> Name of product</b></p>
+    <p><b> category of product:</b></p>
+    <p><b> Quantity of product:</b></p>
+    <p><b> price of product:</b></p>
+    <p><b> purchase Date:</b></p>
+    <p><b> Expiry Date:</b></p>
+    <p><b>reminder:</b></p>
+    <p><b>description about product:</b></p>
+    </div> 
+    <div><h6 style=" text-align:center; margin-top:10px; margin-bottom:0; padding:p;">REMINDER 9</h6>
+    <hr><p><b> Name of product</b></p>
+    <p><b> category of product:</b></p>
+    <p ><b> Quantity of product:</b></p>
+    <p><b> price of product:</b></p>
+    <p><b> purchase Date:</b></p>
+    <p><b> Expiry Date:</b></p>
+    <p><b>reminder:</b></p>
+    <p><b>description about product:</b></p>
+    </div>
+    <div><h6 style=" text-align:center; margin-top:10px; margin-bottom:0; padding:p;">REMINDER 10</h6>
+    <hr><p><b> Name of product</b></p>
+    <p><b> category of product:</b></p>
+    <p><b> Quantity of product:</b></p>
+    <p><b> price of product:</b></p>
+    <p><b> purchase Date:</b></p>
+    <p><b> Expiry Date:</b></p>
+    <p><b>reminder:</b></p>
+    <p><b>description about product:</b></p>
+    </div>
+    <div><h6 style=" text-align:center; margin-top:10px; margin-bottom:0; padding:p;">REMINDER 11</h6>
+    <hr> <p><b> Name of product</b></p>
+    <p><b> category of product:</b></p>
+    <p><b> Quantity of product:</b></p>
+    <p><b> price of product:</b></p>
+    <p><b> purchase Date:</b></p>
+    <p><b> Expiry Date:</b></p>
+    <p><b>reminder:</b></p>
+    <p><b>description about product:</b></p>
+    </div>  
+    <div><h6 style=" text-align:center; margin-top:10px; margin-bottom:0; padding:p;">REMINDER 12</h6>
+    <hr><p><b> Name of product</b></p>
+    <p><b> category of product:</b></p>
+    <p><b> Quantity of product:</b></p>
+    <p><b> price of product:</b></p>
+    <p><b> purchase Date:</b></p>
+    <p><b> Expiry Date:</b></p>
+    <p><b>reminder:</b></p>
+    <p><b>description about product:</b></p>
+    </div>
+    </div>
+    
+<div class="navbar2" >
+<p style="text-align: center; margin-bottom: 0pt;"> We hope all your requirements will fullfil with expiry tracker, you can contact us by using below link.</p> 
+
+<a href="#" class="fa fa-facebook"></a> 
+<a href="#" class="fa fa-twitter"></a> 
+<a href="#" class="fa fa-google"></a>
+<a href="#" class="fa fa-instagram"></a>
+<a href="#" class="fa fa-pinterest"></a>
+<p style="clear: left; margin-top: 0pt;"></p> <hr>
+<a href="contact%20us.html" >Contact Us OR Feedback</a><br>
+<p style="text-align: center;"> © all rights reserved by EXPIRY TRACKER</p><br>
+
+</div>
+ 
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
