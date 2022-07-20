@@ -18,6 +18,9 @@ follow below step to set up this site to your machine.
 1. install xampp in your pc
 2. start xampp and start mysql server for database and apache for running php files.
 3. create databases users,products,documents and add particulalr details by reading form's inputs.
+
 hope you will learn a lot from this..
+
 wish you the best,
+
 Ankush.
